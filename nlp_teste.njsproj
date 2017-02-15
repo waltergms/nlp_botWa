@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>nlp_teste</Name>
+    <RootNamespace>nlp_teste</RootNamespace>
+    <LaunchUrl>localhost:3000</LaunchUrl>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b6a4fcc2-bf06-45db-9140-7009ae382cc4</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartWebBrowser>True</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="controller\aiController.js" />
+    <Compile Include="controller\answerController.js" />
+    <Compile Include="controller\botController.js" />
+    <Compile Include="controller\classifierController.js" />
+    <Compile Include="controller\databaseController.js" />
+    <Compile Include="controller\facebookController.js" />
+    <Compile Include="controller\historicController.js" />
+    <Compile Include="controller\questionController.js" />
+    <Compile Include="controller\socketController.js" />
+    <Compile Include="controller\userController.js" />
+    <Compile Include="controller\wordController.js" />
+    <Compile Include="models\Answers.js" />
+    <Compile Include="models\Classifiers.js" />
+    <Compile Include="models\Classifiers_Words.js" />
+    <Compile Include="models\Events.js" />
+    <Compile Include="models\Historical.js" />
+    <Compile Include="models\maps\Answer.js" />
+    <Compile Include="models\maps\Classifier_Word.js" />
+    <Compile Include="models\maps\Company.js" />
+    <Compile Include="models\maps\Event.js" />
+    <Compile Include="models\maps\Historic.js" />
+    <Compile Include="models\maps\Question.js" />
+    <Compile Include="models\maps\Question_Word.js" />
+    <Compile Include="models\maps\Room.js" />
+    <Compile Include="models\maps\Room_User.js" />
+    <Compile Include="models\maps\User.js" />
+    <Compile Include="models\maps\User_Socket.js" />
+    <Compile Include="models\maps\Word.js" />
+    <Compile Include="models\maps\Classifier.js" />
+    <Compile Include="models\Questions.js" />
+    <Compile Include="models\Questions_Words.js" />
+    <Compile Include="models\Rooms.js" />
+    <Compile Include="models\Rooms_Users.js" />
+    <Compile Include="models\Users.js" />
+    <Compile Include="models\UserStatus.js" />
+    <Compile Include="models\Words.js" />
+    <Compile Include="public\javascripts\socket.io.js" />
+    <Compile Include="routes\classifier.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="routes\users.js" />
+    <Compile Include="routes\webhook.js" />
+    <Content Include="certs\wabot.webaula.com.br.crt" />
+    <Content Include="certs\wabot.webaula.com.br.csr" />
+    <Content Include="certs\wabot.webaula.com.br.key" />
+    <Content Include="config\appConfig.json" />
+    <Content Include="controller\chatCoreController.js" />
+    <Content Include="models\Companies.js" />
+    <Content Include="models\maps\UserStatus.js" />
+    <Content Include="models\Users_Sockets.js" />
+    <Content Include="npm-debug.log" />
+    <Content Include="package.json" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="README.md" />
+    <Content Include="settings.json" />
+    <Content Include="ssl.crt" />
+    <Content Include="ssl.private.key" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="certs\" />
+    <Folder Include="controller\" />
+    <Folder Include="models\" />
+    <Folder Include="models\maps\" />
+    <Folder Include="middleware\" />
+    <Folder Include="config\" />
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\body-parser\" />
+    <Folder Include="typings\globals\bootstrap\" />
+    <Folder Include="typings\globals\cookie-parser\" />
+    <Folder Include="typings\globals\debug\" />
+    <Folder Include="typings\globals\express\" />
+    <Folder Include="typings\globals\fb\" />
+    <Folder Include="typings\globals\jade\" />
+    <Folder Include="typings\globals\jquery\" />
+    <Folder Include="typings\globals\morgan\" />
+    <Folder Include="typings\globals\natural\" />
+    <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\sequelize\" />
+    <Folder Include="typings\globals\serve-favicon\" />
+    <Folder Include="typings\globals\socket.io-redis\" />
+    <Folder Include="typings\globals\socket.io\" />
+    <Folder Include="typings\globals\spdy\" />
+    <Folder Include="typings\globals\tedious\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\cookie-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\debug\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\fb\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\natural\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\sequelize\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\socket.io-redis\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\socket.io\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\spdy\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\tedious\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

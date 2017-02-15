@@ -1,0 +1,5 @@
+https://rocky-plateau-14815.herokuapp.com/webhook/
+
+EAAFVIxhFZCpQBAMdyUlywlYKKxdI4K5vRUt6b9cGv5vpC1OiKU0eRy9v4HrJ0ksZBSZC0lrQmqYYlsH04GZAuVNVSkmPjjp1PJejOnUAYkGVpAH4ghREMI48XJeSKEk9YArE0ooxkGcRtJOkOxhrx9VyzuxVululsqSI8tfPRgZDZD
+
+Não foi possível validar a URL. Callback verification failed with the following errors: curl_errno = 60; curl_error = SSL certificate problem: unable to get local issuer certificate; HTTP Status Code = 200; HTTP Message = Connection established

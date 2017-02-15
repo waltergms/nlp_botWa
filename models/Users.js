@@ -1,0 +1,123 @@
+﻿'use strict'
+/// -------------------------------------------------------------------------------------------
+var _ = require('underscore');
+var DBMap = require('../controller/databaseController').models.User;
+/// -------------------------------------------------------------------------------------------
+class User {
+	constructor() {
+		this.Id = 0;
+		this.CompanyId = 0;
+		this.LegacyId = 0;
+		this.Name = "";
+		this.Avatar = "";
+		this.LastTimeOnline = new Date();
+		this.UserAgent = "";
+		this.UserStatusId = null;
+		this.FBPageId = "";
+		this.FBMssengerId = "";
+		this.db = DBMap;
+	}
+	/// ---------------------------------------------------------------------------------------
+	/// Salva a instancia do objeto no banco de dados
+	/// Retorna o objeto inserido no banco
+	/// ---------------------------------------------------------------------------------------
+	Save(cb) {
+		try {
+			var objInstance = this;
+			delete objInstance.db;
+			this.db.create(objInstance).then(function (result) {
+				cb(results);
+			});
+		} catch (ex) {
+			cb(new Error(ex));
+		}
+	}
+	/// ---------------------------------------------------------------------------------------
+	/// Atualiza a instancia do objeto no banco de dados
+	/// Retorna a quantidade de registros alterados
+	/// ---------------------------------------------------------------------------------------
+	Update(cb) {
+		try {
+			var jsonData = {};
+			_.each(this, function (value, key) {
+				if (key !== "db")
+					jsonData[key] = value;
+			});
+			this.db.update(jsonData, { where: { "Id": this.Id } }).then(function (result) {
+				cb(result[0]);
+			});
+		} catch (ex) {
+			cb(new Error(ex));
+		}
+	}
+	/// ---------------------------------------------------------------------------------------
+	/// Atualiza a instancia do objeto no banco de dados
+	/// Retorna a quantidade de registros alterados
+	/// ---------------------------------------------------------------------------------------
+	Delete(cb) {
+		try {
+			this.db.destroy({ where: { "Id": this.Id } }).then(function (result) {
+				cb(result[0]);
+			});
+		} catch (ex) {
+			cb(new Error(ex));
+		}
+	}
+	/// ---------------------------------------------------------------------------------------
+	/// FindById
+	/// Retorna os dados pelo Id
+	/// ---------------------------------------------------------------------------------------
+	FindById(idObj, cb) {
+		try {
+			var _this = this;
+			this.db.findById(idObj).then(function (result) {
+				if (result != null) {
+					_.each(result.dataValues, function (value, key) {
+						_this[key] = value;
+					});
+					cb(_this);
+				} else {
+					cb(_this);
+				}
+			});
+		} catch (ex) {
+			cb(new Error(ex));
+		}
+	}
+	/// ---------------------------------------------------------------------------------------
+	/// GetAllInstances
+	/// Retorna um array de todos os itens cadastrados
+	/// ---------------------------------------------------------------------------------------
+	GetAllInstances(cb) {
+		try {
+			var _this = this;
+			this.db.findAll({ raw: true }).then(function (result) {
+				cb(result);
+			});
+		} catch (ex) {
+			cb(new Error(ex));
+		}
+	}
+
+	FindOrCreate(objUser, idFB, callback) {
+		try {
+			this.db.findOrCreate({
+				where: {
+					FBMessengerId: idFB
+				}
+			}, {
+					defaults: {
+						"Name": objUser.Name,
+						"UserStatusId": 1,
+						"FBMessengerId": idFB
+				}
+				}).then(function (result) {
+					callback(result);
+			});
+		} catch (e) {
+			callback(new Error(e.message));
+		}
+	}
+}
+/// -------------------------------------------------------------------------------------------
+exports.User = User;

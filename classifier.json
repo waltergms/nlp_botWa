@@ -1,0 +1,96 @@
+{
+	"classifier": {
+		"classFeatures": {
+			"Avaliacao": {
+				"7": 2,
+				"8": 2,
+				"11": 2,
+				"12": 2,
+				"13": 2
+			},
+			"Curso": {
+				"2": 2,
+				"5": 2,
+				"6": 2,
+				"7": 2,
+				"8": 2
+			},
+			"Disciplina": {
+				"2": 2,
+				"6": 2,
+				"8": 2,
+				"9": 2,
+				"10": 2
+			},
+			"Forum": {
+				"0": 2,
+				"1": 2,
+				"2": 2,
+				"3": 2,
+				"4": 2
+			},
+			"Turma": {
+				"8": 2,
+				"12": 2,
+				"14": 2,
+				"15": 2
+			}
+		},
+		"classTotals": {
+			"Forum": 2,
+			"Curso": 2,
+			"Disciplina": 2,
+			"Avaliacao": 2,
+			"Turma": 2
+		},
+		"totalExamples": 6,
+		"smoothing": 1
+	},
+	"docs": [
+		{
+			"label": "Forum",
+			"text": [ "Topico", "Pontuavel", "Pontuacao", "Pergunta", "Resposta" ]
+		},
+		{
+			"label": "Curso",
+			"text": [ "Provas", "Pontuacao", "Periodo", "Turma", "Forum" ]
+		},
+		{
+			"label": "Disciplina",
+			"text": [ "Material", "Avaliacao", "Pontuacao", "Periodo", "Forum" ]
+		},
+		{
+			"label": "Avaliacao",
+			"text": [ "Pontos", "Data", "Disciplina", "Turma", "Forum" ]
+		},
+		{
+			"label": "Turma",
+			"text": [ "Sala", "Data", "Alunos", "Forum" ]
+		}
+	],
+	"features": {
+		"Topico": 1,
+		"Pontuavel": 1,
+		"Pontuacao": 3,
+		"Pergunta": 1,
+		"Resposta": 1,
+		"Provas": 1,
+		"Periodo": 2,
+		"Turma": 2,
+		"Forum": 4,
+		"Material": 1,
+		"Avaliacao": 1,
+		"Pontos": 1,
+		"Data": 2,
+		"Disciplina": 1,
+		"Sala": 1,
+		"Alunos": 1
+	},
+	"stemmer": { },
+	"lastAdded": 5,
+	"events": {
+		"domain": null,
+		"_events": { },
+		"_eventsCount": 0
+	}
+}

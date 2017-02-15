@@ -1,0 +1,26 @@
+extends layout
+block header
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+block content
+	form(method="POST", action="#")
+		input(type="text", id="txtMessage", name="txtMessage", value="")
+		select(id="userSelect", name="userSelect")
+			option(value="940887249350023") Walter
+			option(value="1225423217545462") Welberty
+			option(value="1134284556609185") Hideji
+		input(type="button", id="btnSend", name="btnSend", value="Enviar")
+
+	script.
+		$(function(){
+			$("#btnSend").on("click", function(){
+				var message = $("#txtMessage").val();
+				var url = "/webhook/sendMessageFromOuterWorld/" + $("#userSelect").val();
+				$.ajax({
+					"method": "POST",
+					"url": url,
+					"data": { "Message": message }
+				}).done(function( data ) {
+					$("#txtMessage").val("");
+				});
+			});
+		})

@@ -1,0 +1,82 @@
+{
+	"classifier": {
+		"classFeatures": {
+			"forum": {
+				"0": 2,
+				"1": 2,
+				"2": 2
+			},
+			"casa": {
+				"3": 2,
+				"4": 2,
+				"5": 2,
+				"6": 2
+			},
+			"fruta": {
+				"7": 2,
+				"8": 2,
+				"9": 2,
+				"10": 2
+			},
+			"bla": {
+				"11": 2,
+				"12": 2,
+				"13": 2
+			}
+		},
+		"classTotals": {
+			"forum": 2,
+			"casa": 2,
+			"fruta": 2,
+			"bla": 2
+		},
+		"totalExamples": 5,
+		"smoothing": 1
+	},
+	"docs": [
+		{
+			"label": "forum",
+			"text": [ "post", "topico", "tópico" ]
+		},
+		{
+			"label": "casa",
+			"text": [ "janela", "porta", "piso", "varanda" ]
+		},
+		{
+			"label": "fruta",
+			"text": [ "jabuticaba", "laranja", "pera", "uva" ]
+		},
+		{
+			"label": "bla",
+			"text": [ "casa", "fruta", "forum" ]
+		}
+	],
+	"features": {
+		"casa": 1,
+		"forum": 1,
+		"fruta": 1,
+		"jabuticaba": 1,
+		"janela": 1,
+		"laranja": 1,
+		"pera": 1,
+		"piso": 1,
+		"porta": 1,
+		"post": 1,
+		"tópico": 1,
+		"topico": 1,
+		"uva": 1,
+		"varanda": 1
+	},
+	"stemmer": { },
+	"lastAdded": 4,
+	"events": {
+		"domain": {
+			"domain": null,
+			"_events": { },
+			"_eventsCount": 1,
+			"members": [ ]
+		},
+		"_events": { },
+		"_eventsCount": 0
+	}
+}
